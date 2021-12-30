@@ -1,0 +1,2 @@
+[2021-12-09 16:43:51] local.EMERGENCY: ERROR: NOT ALLOWED: Mismatch between sold and purchase quantity. Product: Adam Esli Disinfectant Air Refresher Bamboo Scent 280ml SKU: 9780201308860 Quantity: 2 Business: DYNADVANCE TRADING AND DISTRIBUTION (DTDI) INC Location: DTDI  
+[2021-12-09 16:43:51] local.EMERGENCY: File:/home/servxpos/public_html/app/Utils/TransactionUtil.phpLine:2941Message:ERROR: NOT ALLOWED: Mismatch between sold and purchase quantity. Product: Adam Esli Disinfectant Air Refresher Bamboo Scent 280ml SKU: 9780201308860 Quantity: 2  

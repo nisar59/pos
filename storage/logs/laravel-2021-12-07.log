@@ -1,0 +1,7 @@
+[2021-12-07 11:03:12] local.EMERGENCY: File:/home/servxpos/public_html/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.phpLine:191Message:Failed to authenticate on SMTP server with username "devservxpos@servxpos.com" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials t14sm2718977oth.81 - gsmtp
+". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials t14sm2718977oth.81 - gsmtp
+". Authenticator XOAUTH2 returned Expected response code 250 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials t14sm2718977oth.81 - gsmtp
+".  
