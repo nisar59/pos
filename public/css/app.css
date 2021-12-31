@@ -956,10 +956,10 @@ table.table-text-center td, table.table-text-center th{
 .col-md-12.no-print.pos-header .btn{
   padding: 14px;
 }
-button.col-md-12.btn.btn-success.btn-flat.no-print.pos-express-finalize{
+button.col-md-12.btn.btn-outline-success.no-print.pos-express-finalize{
 padding: 22px;
 }
-button.col-md-12.btn.bg-navy.btn-default.btn-flat.no-print{
+button.col-md-12.btn.btn-outline-dark.no-print{
   padding: 22px;
 }
 

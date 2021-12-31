@@ -13,13 +13,13 @@
 				</div>
 			<?php endif; ?>
 		<div class="col-md-2">
-			<button type="button" class="col-md-12 <?php if($is_mobile): ?> col-xs-6 <?php endif; ?> btn bg-info text-white btn-default btn-flat <?php if($pos_settings['disable_draft'] != 0): ?> hide <?php endif; ?>" id="pos-draft"><i class="fas fa-edit"></i> <?php echo app('translator')->getFromJson('sale.draft'); ?></button>
-			<button type="button" class="col-md-12 btn btn-default bg-yellow btn-flat <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" id="pos-quotation"><i class="fas fa-edit"></i> <?php echo app('translator')->getFromJson('lang_v1.quotation'); ?></button>
+			<button type="button" class="col-md-12 <?php if($is_mobile): ?> col-xs-6 <?php endif; ?> btn btn-outline-info <?php if($pos_settings['disable_draft'] != 0): ?> hide <?php endif; ?>" id="pos-draft"><i class="fas fa-edit"></i> <?php echo app('translator')->getFromJson('sale.draft'); ?></button>
+			<button type="button" class="col-md-12 btn btn-outline-warning <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" id="pos-quotation"><i class="fas fa-edit"></i> <?php echo app('translator')->getFromJson('lang_v1.quotation'); ?></button>
 		</div>
 		<div class="col-md-2">
 			<?php if(empty($pos_settings['disable_suspend'])): ?>
 				<button type="button" 
-				class="col-md-12 <?php if($is_mobile): ?> col-xs-6 <?php endif; ?> btn bg-red btn-default btn-flat no-print pos-express-finalize" 
+				class="col-md-12 <?php if($is_mobile): ?> col-xs-6 <?php endif; ?> btn btn-outline-danger no-print pos-express-finalize" 
 				data-pay_method="suspend"
 				title="<?php echo app('translator')->getFromJson('lang_v1.tooltip_suspend'); ?>" >
 				<i class="fas fa-pause" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
 			<?php if(empty($pos_settings['disable_credit_sale_button'])): ?>
 				<input type="hidden" name="is_credit_sale" value="0" id="is_credit_sale">
 				<button type="button" 
-				class="col-md-12 btn bg-purple btn-default btn-flat no-print pos-express-finalize <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" 
+				class="col-md-12 btn btn-outline-primary no-print pos-express-finalize <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" 
 				data-pay_method="credit_sale"
 				title="<?php echo app('translator')->getFromJson('lang_v1.tooltip_credit_sale'); ?>" >
 					<i class="fas fa-check" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.credit_sale'); ?>
@@ -43,10 +43,10 @@
 				title="<?php echo app('translator')->getFromJson('lang_v1.tooltip_express_checkout_card'); ?>" >
 				<i class="fas fa-credit-card" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.express_checkout_card'); ?>
 			</button> -->
-			<button type="button" class="col-md-12 btn bg-navy btn-default  <?php if(!$is_mobile): ?> <?php endif; ?> btn-flat no-print <?php if($pos_settings['disable_pay_checkout'] != 0): ?> hide <?php endif; ?> <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" id="pos-finalize" title="<?php echo app('translator')->getFromJson('lang_v1.tooltip_checkout_multi_pay'); ?>"><i class="fas fa-money-check-alt" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.checkout_multi_pay'); ?> </button>
+			<button type="button" class="col-md-12 btn btn-outline-dark  <?php if(!$is_mobile): ?> <?php endif; ?> no-print <?php if($pos_settings['disable_pay_checkout'] != 0): ?> hide <?php endif; ?> <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" id="pos-finalize" title="<?php echo app('translator')->getFromJson('lang_v1.tooltip_checkout_multi_pay'); ?>"><i class="fas fa-money-check-alt" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.checkout_multi_pay'); ?> </button>
 		</div>
 		<div class="col-md-2">
-			<button type="button" class="col-md-12 btn btn-success <?php if(!$is_mobile): ?> <?php endif; ?> btn-flat no-print <?php if($pos_settings['disable_express_checkout'] != 0 || !array_key_exists('cash', $payment_types)): ?> hide <?php endif; ?> pos-express-finalize <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" data-pay_method="cash" title="<?php echo app('translator')->getFromJson('tooltip.express_checkout'); ?>"> <i class="fas fa-money-bill-alt" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.express_checkout_cash'); ?></button>
+			<button type="button" class="col-md-12 btn btn-outline-success <?php if(!$is_mobile): ?> <?php endif; ?> no-print <?php if($pos_settings['disable_express_checkout'] != 0 || !array_key_exists('cash', $payment_types)): ?> hide <?php endif; ?> pos-express-finalize <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" data-pay_method="cash" title="<?php echo app('translator')->getFromJson('tooltip.express_checkout'); ?>"> <i class="fas fa-money-bill-alt" aria-hidden="true"></i> <?php echo app('translator')->getFromJson('lang_v1.express_checkout_cash'); ?></button>
 		</div>
 			<?php if(!$is_mobile): ?>
 			&nbsp;&nbsp;
@@ -57,13 +57,13 @@
 			&nbsp;&nbsp;
 			<?php endif; ?>
 			<?php if(empty($edit)): ?>
-				<button type="button" class="btn btn-danger btn-flat <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-cancel"> <i class="fas fa-window-close"></i> <?php echo app('translator')->getFromJson('sale.cancel'); ?></button>
+				<button type="button" class="btn btn-outline-danger <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-cancel"> <i class="fas fa-window-close"></i> <?php echo app('translator')->getFromJson('sale.cancel'); ?></button>
 			<?php else: ?>
-				<button type="button" class="btn btn-danger btn-flat hide <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-delete"> <i class="fas fa-trash-alt"></i> <?php echo app('translator')->getFromJson('messages.delete'); ?></button>
+				<button type="button" class="btn btn-outline-danger btn-flat hide <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-delete"> <i class="fas fa-trash-alt"></i> <?php echo app('translator')->getFromJson('messages.delete'); ?></button>
 			<?php endif; ?>
 
 			<?php if(!isset($pos_settings['hide_recent_trans']) || $pos_settings['hide_recent_trans'] == 0): ?>
-			<button type="button" class="btn btn-primary btn-flat pull-right <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" data-toggle="modal" data-target="#recent_transactions_modal" id="recent-transactions"> <i class="fas fa-clock"></i> <?php echo app('translator')->getFromJson('lang_v1.recent_transactions'); ?></button>
+			<button type="button" class="btn btn-outline-primary pull-right <?php if($is_mobile): ?> col-xs-6 <?php endif; ?>" data-toggle="modal" data-target="#recent_transactions_modal" id="recent-transactions"> <i class="fas fa-clock"></i> <?php echo app('translator')->getFromJson('lang_v1.recent_transactions'); ?></button>
 			<?php endif; ?>
 			
 		</div>
