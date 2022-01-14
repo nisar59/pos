@@ -53,6 +53,7 @@
                     <thead>
                         <tr>
                             <th><?php if(!empty($module_category_data['taxonomy_label'])): ?> <?php echo e($module_category_data['taxonomy_label'], false); ?> <?php else: ?> <?php echo app('translator')->getFromJson( 'category.category' ); ?> <?php endif; ?></th>
+                            <th><?php echo app('translator')->getFromJson( 'category.color' ); ?></th>
                             <?php if($cat_code_enabled): ?>
                                 <th><?php echo e($module_category_data['taxonomy_code_label'] ?? __( 'category.code' ), false); ?></th>
                             <?php endif; ?>

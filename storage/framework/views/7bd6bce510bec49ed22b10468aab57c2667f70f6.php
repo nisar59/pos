@@ -25,6 +25,7 @@
                     ajax: '/taxonomies?type=' + category_type,
                     columns: [
                         { data: 'name', name: 'name' },
+                        { data: 'color', name: 'color' },
                         <?php if($cat_code_enabled): ?>
                             { data: 'short_code', name: 'short_code' },
                         <?php endif; ?>

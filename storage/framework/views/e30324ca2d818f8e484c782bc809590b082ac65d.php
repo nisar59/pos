@@ -70,7 +70,7 @@
 
         <?php if(in_array('pos_sale', $enabled_modules)): ?>
           <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('sell.create')): ?>
-            <a href="<?php echo e(action('SellPosController@create'), false); ?>" title="<?php echo app('translator')->getFromJson('sale.pos_sale'); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-flat pull-left m-8 btn-sm mt-10 btn-success">
+            <a href="<?php echo e(action('SellPosController@create'), false); ?>" title="<?php echo app('translator')->getFromJson('sale.pos_sale'); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-flat pull-left m-8 btn-sm mt-10 btn-success" style="padding: 10px 16px;font-size: 18px;">
               <strong><i class="fa fa-th-large"></i> &nbsp; <?php echo app('translator')->getFromJson('sale.pos_sale'); ?></strong>
             </a>
           <?php endif; ?>

@@ -41,9 +41,9 @@
       <div class="clearfix"></div>
       <div class="col-md-4">
         <div class="form-group">
-          <?php echo Form::label('email', __( 'business.email' ) . ':*'); ?>
+          <?php echo Form::label('email', __( 'business.email' ) . ':'); ?>
 
-            <?php echo Form::text('email', null, ['class' => 'form-control', 'required', 'placeholder' => __( 'business.email' ) ]);; ?>
+            <?php echo Form::text('email', null, ['class' => 'form-control', 'placeholder' => __( 'business.email' ) ]);; ?>
 
         </div>
       </div>

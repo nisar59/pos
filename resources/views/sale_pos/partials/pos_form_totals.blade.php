@@ -1,4 +1,7 @@
-<div class="row pos_form_totals">
+@php
+$is_mobile = isMobile();
+@endphp
+<div class="row pos_form_totals" style="background-color: silver; padding: 12px; margin: 10px; border-radius: 10px;">
 	<div class="col-md-12">
 		<table class="table table-condensed">
 			<tr>
@@ -30,7 +33,7 @@
 
 							<input type="hidden" name="rp_redeemed_amount" id="rp_redeemed_amount" value="@if(empty($edit)){{'0'}}@else {{$transaction->rp_redeemed_amount}} @endif">
 
-							</span>
+							
 					</b> 
 				</td>
 				<td class="@if($pos_settings['disable_order_tax'] != 0) hide @endif">
@@ -87,7 +90,24 @@
 					<input type="hidden" name="round_off_amount" id="round_off_amount" value=0>
 				</td>
 				@endif
+				@if(!$is_mobile)
+				<td>
+				&nbsp;&nbsp;
+				<b>@lang('sale.total_payable'):</b>
+				<input type="hidden" name="final_total"
+				id="final_total_input" value=0>
+				<span id="total_payable" class="text-success text-bold">0</span>
+				&nbsp;&nbsp;
+				@endif
+				@if(empty($edit))
+				<button type="button" class="btn rounded-circle btn-outline-danger @if($is_mobile) col-xs-6 @else btn-xs @endif" id="pos-cancel"> <i class="fas fa-window-close"></i> @lang('sale.cancel')</button>
+				@else
+				<button type="button" class="btn rounded-circle btn-outline-danger btn-flat hide @if($is_mobile) col-xs-6 @else btn-xs @endif" id="pos-delete"> <i class="fas fa-trash-alt"></i> @lang('messages.delete')</button>
+			</td>
+				@endif
 			</tr>
 		</table>
-	</div>
+	<hr>
+				@include('sale_pos.partials.pos_form_actions')
+</div>
 </div>

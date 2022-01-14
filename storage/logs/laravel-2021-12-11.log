@@ -1,2 +1,0 @@
-[2021-12-11 17:54:27] local.EMERGENCY: File:/home/servxpos/public_html/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.phpLine:459Message:Expected response code 250 but got code "530", with message "530 5.7.0 Must issue a STARTTLS command first. t3sm1026695otk.44 - gsmtp
-"  

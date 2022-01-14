@@ -26,6 +26,9 @@
 			</select>
 		</div>
 	<?php endif; ?>
+	<div class="col-md-8 ">
+		<button type="button" class="btn btn-outline-primary pull-right " style="border-radius: 20px;" id="return-to-category"><i class="fa fa-reply fa-lg" aria-hidden="true"></i></button>
+	</div>
 <!-- 
 	<?php if(!empty($brands)): ?>
 		<div class="col-sm-4" id="product_brand_div">
@@ -36,16 +39,32 @@
  -->	<div class="col-md-12">
 		<div class="box box-solid mb-12">
 			<div class="box-body">
-				<div class="col-md-2 product_category" data-value="all" style="padding: 20px; border: 1px solid; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;">
+				<div class="product_categories">
+					<?php
+					$count=0;
+					?>
+				<div class="col-md-2 product_category" data-value="all" style="padding: 20px; border:2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px; background: #39adbf;color: white; cursor: pointer;">
 					<?php echo app('translator')->getFromJson('lang_v1.all_category'); ?>
 				</div>
-				<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-				<div class="col-md-2 product_category" data-value="<?php echo e($category['id'], false); ?>" style="padding: 20px; border: 1px solid; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;">
+				<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=> $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+				<?php
+				$count=$key+1;
+				$stln=strlen($category['name']);
+
+				?>
+				<div class="col-md-2 product_category" data-value="<?php echo e($category['id'], false); ?>" style="<?php if($stln>17): ?> padding: 12px; <?php else: ?> padding: 20px; <?php endif; ?> border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e($category['color'], false); ?>; color: white;cursor: pointer;">
 					<?php echo e($category['name'], false); ?>
 
 				</div>	
 				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+				<?php for($i=$key; $i<40; $i++): ?>
+				<div class="col-md-2" style="padding: 20px; border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e(rand_color(), false); ?>; color: white;">
+					Empty Div
+				</div>	
+				<?php endfor; ?>
 			</div>
+		</div>
 		</div>
 	</div>
 	<!-- used in repair : filter for service/product -->

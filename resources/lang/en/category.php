@@ -24,5 +24,5 @@ return [
     'deleted_success' => 'Category deleted successfully',
     'add_category' => 'Add Category',
     'edit_category' => 'Edit Category',
-
+    'color'=>'Color',
 ];

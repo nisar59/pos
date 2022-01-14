@@ -1,4 +1,7 @@
-<div class="row pos_form_totals">
+<?php
+$is_mobile = isMobile();
+?>
+<div class="row pos_form_totals" style="background-color: silver; padding: 12px; margin: 10px; border-radius: 10px;">
 	<div class="col-md-12">
 		<table class="table table-condensed">
 			<tr>
@@ -37,7 +40,7 @@
 
 							<input type="hidden" name="rp_redeemed_amount" id="rp_redeemed_amount" value="<?php if(empty($edit)): ?><?php echo e('0', false); ?><?php else: ?> <?php echo e($transaction->rp_redeemed_amount, false); ?> <?php endif; ?>">
 
-							</span>
+							
 					</b> 
 				</td>
 				<td class="<?php if($pos_settings['disable_order_tax'] != 0): ?> hide <?php endif; ?>">
@@ -107,7 +110,25 @@
 					<input type="hidden" name="round_off_amount" id="round_off_amount" value=0>
 				</td>
 				<?php endif; ?>
+				<?php if(!$is_mobile): ?>
+				<td>
+				&nbsp;&nbsp;
+				<b><?php echo app('translator')->getFromJson('sale.total_payable'); ?>:</b>
+				<input type="hidden" name="final_total"
+				id="final_total_input" value=0>
+				<span id="total_payable" class="text-success text-bold">0</span>
+				&nbsp;&nbsp;
+				<?php endif; ?>
+				<?php if(empty($edit)): ?>
+				<button type="button" class="btn rounded-circle btn-outline-danger <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-cancel"> <i class="fas fa-window-close"></i> <?php echo app('translator')->getFromJson('sale.cancel'); ?></button>
+				<?php else: ?>
+				<button type="button" class="btn rounded-circle btn-outline-danger btn-flat hide <?php if($is_mobile): ?> col-xs-6 <?php else: ?> btn-xs <?php endif; ?>" id="pos-delete"> <i class="fas fa-trash-alt"></i> <?php echo app('translator')->getFromJson('messages.delete'); ?></button>
+			</td>
+				<?php endif; ?>
 			</tr>
 		</table>
-	</div>
-</div><?php /**PATH C:\xampp\htdocs\pos\resources\views/sale_pos/partials/pos_form_totals.blade.php ENDPATH**/ ?>
+	<hr>
+				<?php echo $__env->make('sale_pos.partials.pos_form_actions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+</div>
+</div>
+<?php /**PATH C:\xampp\htdocs\pos\resources\views/sale_pos/partials/pos_form_totals.blade.php ENDPATH**/ ?>

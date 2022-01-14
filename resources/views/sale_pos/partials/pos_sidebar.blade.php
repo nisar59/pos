@@ -26,6 +26,9 @@
 			</select>
 		</div>
 	@endif
+	<div class="col-md-8 ">
+		<button type="button" class="btn btn-outline-primary pull-right " style="border-radius: 20px;" id="return-to-category"><i class="fa fa-reply fa-lg" aria-hidden="true"></i></button>
+	</div>
 <!-- 
 	@if(!empty($brands))
 		<div class="col-sm-4" id="product_brand_div">
@@ -35,15 +38,31 @@
  -->	<div class="col-md-12">
 		<div class="box box-solid mb-12">
 			<div class="box-body">
-				<div class="col-md-2 product_category" data-value="all" style="padding: 20px; border: 1px solid; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;">
+				<div class="product_categories">
+					@php
+					$count=0;
+					@endphp
+				<div class="col-md-2 product_category" data-value="all" style="padding: 20px; border:2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px; background: #39adbf;color: white; cursor: pointer;">
 					@lang('lang_v1.all_category')
 				</div>
-				@foreach($categories as $category)
-				<div class="col-md-2 product_category" data-value="{{$category['id']}}" style="padding: 20px; border: 1px solid; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;">
+				@foreach($categories as $key=> $category)
+				@php
+				$count=$key+1;
+				$stln=strlen($category['name']);
+
+				@endphp
+				<div class="col-md-2 product_category" data-value="{{$category['id']}}" style="@if($stln>17) padding: 12px; @else padding: 20px; @endif border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: {{$category['color']}}; color: white;cursor: pointer;">
 					{{$category['name']}}
 				</div>	
 				@endforeach
+
+				@for($i=$key; $i<40; $i++)
+				<div class="col-md-2" style="padding: 20px; border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: {{rand_color()}}; color: white;">
+					Empty Div
+				</div>	
+				@endfor
 			</div>
+		</div>
 		</div>
 	</div>
 	<!-- used in repair : filter for service/product -->

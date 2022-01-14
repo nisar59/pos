@@ -36,8 +36,8 @@
       <div class="clearfix"></div>
       <div class="col-md-4">
         <div class="form-group">
-          {!! Form::label('email', __( 'business.email' ) . ':*') !!}
-            {!! Form::text('email', null, ['class' => 'form-control', 'required', 'placeholder' => __( 'business.email' ) ]); !!}
+          {!! Form::label('email', __( 'business.email' ) . ':') !!}
+            {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => __( 'business.email' ) ]); !!}
         </div>
       </div>
 

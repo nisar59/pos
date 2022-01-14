@@ -70,7 +70,7 @@
 
         @if(in_array('pos_sale', $enabled_modules))
           @can('sell.create')
-            <a href="{{action('SellPosController@create')}}" title="@lang('sale.pos_sale')" data-toggle="tooltip" data-placement="bottom" class="btn btn-flat pull-left m-8 btn-sm mt-10 btn-success">
+            <a href="{{action('SellPosController@create')}}" title="@lang('sale.pos_sale')" data-toggle="tooltip" data-placement="bottom" class="btn btn-flat pull-left m-8 btn-sm mt-10 btn-success" style="padding: 10px 16px;font-size: 18px;">
               <strong><i class="fa fa-th-large"></i> &nbsp; @lang('sale.pos_sale')</strong>
             </a>
           @endcan

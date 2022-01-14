@@ -43,7 +43,7 @@ class TaxonomyController extends Controller
 
             $category = Category::where('business_id', $business_id)
                             ->where('category_type', $category_type)
-                            ->select(['name', 'short_code', 'description', 'id', 'parent_id']);
+                            ->select(['name', 'color', 'short_code', 'description', 'id', 'parent_id']);
 
             return Datatables::of($category)
                 ->addColumn(
@@ -61,6 +61,9 @@ class TaxonomyController extends Controller
                     } else {
                         return $row->name;
                     }
+                })
+                ->editColumn('color', function ($row) {
+                        return $row->color;
                 })
                 ->removeColumn('id')
                 ->removeColumn('parent_id')
@@ -205,7 +208,7 @@ class TaxonomyController extends Controller
 
         if (request()->ajax()) {
             try {
-                $input = $request->only(['name', 'description']);
+                $input = $request->only(['name', 'color', 'description']);
                 $business_id = $request->session()->get('user.business_id');
 
                 $category = Category::where('business_id', $business_id)->findOrFail($id);

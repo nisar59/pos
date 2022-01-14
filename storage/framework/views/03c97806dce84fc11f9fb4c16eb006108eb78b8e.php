@@ -18,7 +18,7 @@
 	<div class="row mb-12">
 		<div class="col-md-12">
 			<div class="row">
-				<div class="<?php if(empty($pos_settings['hide_product_suggestion'])): ?> col-md-7 <?php else: ?> col-md-10 col-md-offset-1 <?php endif; ?> no-padding pr-12">
+				<div class="<?php if(empty($pos_settings['hide_product_suggestion'])): ?> col-md-7 <?php else: ?> col-md-10 col-md-offset-1 <?php endif; ?>">
 					<div class="box box-solid mb-12">
 						<div class="box-body pb-0">
 							<?php echo Form::hidden('location_id', $default_location->id ?? null , ['id' => 'location_id', 'data-receipt_printer_type' => !empty($default_location->receipt_printer_type) ? $default_location->receipt_printer_type : 'browser', 'data-default_payment_accounts' => $default_location->default_payment_accounts ?? '']);; ?>
@@ -44,14 +44,14 @@
 						</div>
 					</div>
 				<?php if(empty($pos_settings['hide_product_suggestion']) && !isMobile()): ?>
-				<div class="col-md-5 no-padding">
+				<div class="col-md-5">
 					<?php echo $__env->make('sale_pos.partials.pos_sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 				</div>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
-	<?php echo $__env->make('sale_pos.partials.pos_form_actions', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	
 	<?php echo Form::close(); ?>
 
 </section>
