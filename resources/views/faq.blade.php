@@ -4,7 +4,7 @@
         font-size: 27px;
         margin: 20px;
     }
-
+ 
     .panel-heading [data-toggle="collapse"]:after {
         font-family: 'Glyphicons Halflings';
         content: "e072"; /* "play" icon */
