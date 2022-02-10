@@ -55,11 +55,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($exception->getStatusCode()==403){
-            //return redirect('home')->with('error', 'Unauthorized action.');
-            return redirect(url()->previous())->with('error', 'Unauthorized action.');
-
-        }
         return parent::render($request, $exception);
     }
 

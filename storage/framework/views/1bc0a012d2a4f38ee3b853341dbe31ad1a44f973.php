@@ -38,7 +38,7 @@
       <div class="form-group">
         <?php echo Form::label('Color:*'); ?>
 
-          <?php echo Form::color('color', $category->color, ['class' => 'form-control', 'required']);; ?>
+          <?php echo Form::select('color', colors(), $category->color, ['class' => 'form-control', 'required']);; ?>
 
       </div>
       <div class="form-group">

@@ -37,29 +37,32 @@
 		</div>
 	<?php endif; ?>
  -->	<div class="col-md-12">
-		<div class="box box-solid mb-12">
+		<div class="box box-solid mb-12" style="background-color: #007bff; height: 500px; overflow-x: hidden; overflow-y: scroll;">
 			<div class="box-body">
 				<div class="product_categories">
 					<?php
 					$count=0;
 					?>
-				<div class="col-md-2 product_category" data-value="all" style="padding: 20px; border:2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px; background: #39adbf;color: white; cursor: pointer;">
+				<div class="col-md-2 product_category" data-value="all" style="padding: 21px; border:2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px; background: #39adbf;color: white; cursor: pointer;">
 					<?php echo app('translator')->getFromJson('lang_v1.all_category'); ?>
 				</div>
 				<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=> $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<?php
 				$count=$key+1;
 				$stln=strlen($category['name']);
-
+				$clr=$category['color'];
 				?>
-				<div class="col-md-2 product_category" data-value="<?php echo e($category['id'], false); ?>" style="<?php if($stln>17): ?> padding: 12px; <?php else: ?> padding: 20px; <?php endif; ?> border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e($category['color'], false); ?>; color: white;cursor: pointer;">
+				<div class="col-md-2 product_category" data-value="<?php echo e($category['id'], false); ?>" style="<?php if($stln<10): ?> padding-top: 28px; padding-bottom: 28px; <?php elseif($stln>17): ?> padding: 12px;  <?php else: ?> padding-top: 21px; padding-bottom: 21px; <?php endif; ?> border: 2px solid <?php echo e($clr, false); ?>; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e($clr, false); ?>; color: white;cursor: pointer;">
 					<?php echo e($category['name'], false); ?>
 
 				</div>	
 				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 				<?php for($i=$key; $i<40; $i++): ?>
-				<div class="col-md-2" style="padding: 20px; border: 2px solid #39adbf; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e(rand_color(), false); ?>; color: white;">
+				<?php
+				$clr=rand_color();
+				?>
+				<div class="col-md-2" style="padding: 21px; border: 2px solid <?php echo e($clr, false); ?>; border-radius: 10px; text-align: center; margin: 5px; font-size: 10px;background: <?php echo e($clr, false); ?>; color: white;">
 					Empty Div
 				</div>	
 				<?php endfor; ?>

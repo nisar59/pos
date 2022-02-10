@@ -32,7 +32,7 @@
       @endif
       <div class="form-group">
         {!! Form::label('Color:*') !!}
-          {!! Form::color('color', $category->color, ['class' => 'form-control', 'required']); !!}
+          {!! Form::select('color', colors(), $category->color, ['class' => 'form-control', 'required']); !!}
       </div>
       <div class="form-group">
         {!! Form::label('description', __( 'lang_v1.description' ) . ':') !!}

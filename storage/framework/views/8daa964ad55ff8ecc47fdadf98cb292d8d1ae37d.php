@@ -41,14 +41,14 @@
 		</div>
 
 		<div class="text_div">
-			<small class="text text-muted"><?php echo e($product->name, false); ?> 
+			<small class="text text-white"><?php echo e($product->name, false); ?> 
 			<?php if($product->type == 'variable'): ?>
 				- <?php echo e($product->variation, false); ?>
 
 			<?php endif; ?>
 			</small>
 
-			<small class="text-muted">
+			<small class="text-white">
 				(<?php echo e($product->sub_sku, false); ?>)
 			</small>
 		</div>

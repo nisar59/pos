@@ -503,8 +503,8 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer !important;
 }
 .pos_product_div{
-    min-height: 57vh;
-    max-height: 57vh;
+    min-height: 20vh;
+    max-height: 20vh;
     overflow-y: auto;
     margin-bottom: 20px;
 }
@@ -804,9 +804,10 @@ table.table-text-center td, table.table-text-center th{
   cursor: pointer;
   /*border: 1px solid darkgray;*/
   font-weight: 600;
-  background-color: #fff;
-  border-radius: 2px;
+  background-color: #007bff;
+  border-radius: 5px;
   padding-top: 3px;
+  box-shadow: 0px 0px 1px 1px #679ef1;
 }
 .product_box .image-container{
   /*width: 95%;*/
@@ -832,6 +833,8 @@ table.table-text-center td, table.table-text-center th{
 
 .product_box .text_div{
     margin-top: 3px;
+    box-shadow: 0px 0px 0px 1px #679ef1;
+    border-radius: 5px;
 }
 .product_box .text{
     width: 100%;
@@ -954,7 +957,7 @@ table.table-text-center td, table.table-text-center th{
 /*////////////////////////// By Mahar Nisar //////////////////////////////////////*/
 
 .col-md-12.no-print.pos-header .btn{
-  padding: 14px;
+  padding: 20px;
 }
 button.rounded-circle.col-md-12.btn.btn-outline-success.no-print.pos-express-finalize{
 padding-top: 22px;

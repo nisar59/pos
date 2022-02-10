@@ -18,13 +18,13 @@
 		</div>
 
 		<div class="text_div">
-			<small class="text text-muted">{{$product->name}} 
+			<small class="text text-white">{{$product->name}} 
 			@if($product->type == 'variable')
 				- {{$product->variation}}
 			@endif
 			</small>
 
-			<small class="text-muted">
+			<small class="text-white">
 				({{$product->sub_sku}})
 			</small>
 		</div>

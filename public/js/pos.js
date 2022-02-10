@@ -1255,12 +1255,12 @@ $(document).ready(function() {
             }
         }
     }
-    $(window).resize(function() {
+/*    $(window).resize(function() {
         var win_height = $(window).height();
         div_height = __calculate_amount('percentage', 63, win_height);
         $('div.pos_product_div').css('min-height', div_height + 'px');
         $('div.pos_product_div').css('max-height', div_height + 'px');
-    });
+    });*/
 
     //Used for weighing scale barcode
     $('#weighing_scale_modal').on('shown.bs.modal', function (e) {

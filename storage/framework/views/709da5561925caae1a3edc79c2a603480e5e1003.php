@@ -29,7 +29,7 @@
 	    data-placement="bottom"
 	    data-html="true"
 	    title="<?php echo app('translator')->getFromJson('essentials::lang.clock_out'); ?> <?php if(!empty($clock_in)): ?>
-                    <br><small>(<?php echo app('translator')->getFromJson('essentials::lang.clocked_in_at'); ?>: <?php echo e(\Carbon::createFromTimestamp(strtotime($clock_in->clock_in_time))->format(session('business.date_format') . ' ' . 'H:i'), false); ?>)</small>
+                    <br><small>(<?php echo app('translator')->getFromJson('essentials::lang.clocked_in_at'); ?>: <?php echo e(\Carbon::createFromTimestamp(strtotime($clock_in->clock_in_time))->format(session('business.date_format') . ' ' . 'h:i A'), false); ?>)</small>
                 <?php endif; ?>" 
 	    >
 	    <i class="fas fa-hourglass-half fa-spin"></i>
